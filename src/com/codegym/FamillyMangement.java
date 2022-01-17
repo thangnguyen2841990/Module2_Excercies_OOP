@@ -1,5 +1,6 @@
 package com.codegym;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -61,5 +62,15 @@ public class FamillyMangement {
         famillies[index] = newFamilly;
     }
 
+    public Date strToDate(String birthDay) {
+        Date date = null;
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        try {
+            date = simpleDateFormat.parse(birthDay);
+        } catch (ParseException e) {
+            System.out.println("Lỗi");
+        }
+        return date;
+    }
 
 }
